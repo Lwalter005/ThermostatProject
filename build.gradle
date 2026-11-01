@@ -17,8 +17,8 @@ ext {
     junitVersion = '5.10.0'
 }
 
-sourceCompatibility = '8'
-targetCompatibility = '8'
+sourceCompatibility = '11'
+targetCompatibility = '11'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -47,10 +47,10 @@ dependencies {
     implementation('eu.hansolo:tilesfx:11.48') {
         exclude(group: 'org.openjfx')
     }
-    implementation('com.github.almasb:fxgl:11.17') {
-        exclude(group: 'org.openjfx')
-        exclude(group: 'org.jetbrains.kotlin')
-    }
+//    implementation('com.github.almasb:fxgl:11.17') {
+//        exclude(group: 'org.openjfx')
+//        exclude(group: 'org.jetbrains.kotlin')
+//    }
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
