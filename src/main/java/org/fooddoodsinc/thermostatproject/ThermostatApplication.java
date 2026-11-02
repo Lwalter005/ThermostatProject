@@ -11,7 +11,7 @@ public class ThermostatApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ThermostatApplication.class.getResource("thermostat-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 500);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Thermostat");
         stage.setScene(scene);
         stage.show();

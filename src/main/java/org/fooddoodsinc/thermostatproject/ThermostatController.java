@@ -12,6 +12,10 @@ public class ThermostatController {
     private Label fanDisplay;
     @FXML
     private Label systemModeDisplay;
+    @FXML
+    private Label currentTempLabel;
+    @FXML
+    private Label targetTempLabel;
 
     private Boolean powerOn = false;
     protected Integer currentTemp = 75;
@@ -34,7 +38,9 @@ public class ThermostatController {
         if (!powerOn) {
             currentTemp = 75;
             currentTempDisplay.setText(String.valueOf(currentTemp));
+            currentTempLabel.setText("Temp");
             targetTempDisplay.setText(String.valueOf(targetTemp));
+            targetTempLabel.setText("Set");
             switch(systemMode) {
                 case COOL:
                     systemModeDisplay.setText("Cool");
@@ -57,7 +63,9 @@ public class ThermostatController {
             powerOn = true;
         } else {
             currentTempDisplay.setText("");
+            currentTempLabel.setText("");
             targetTempDisplay.setText("");
+            targetTempLabel.setText("");
             systemModeDisplay.setText("");
             fanDisplay.setText("");
             powerOn = false;

@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+
+.displayBox {
+    -fx-background-color: linear-gradient(to top left, #477e35, #76a465, #477e35);
+    -fx-background-radius: 20;
+    -fx-effect: innershadow(gaussian, #424242, 50, 0, 15, 15);
+}
+
+.displayBoxDropShadow {
+    -fx-effect: dropshadow(gaussian, #625e54, 15, 0, -3, -3);
+}
+
+.dropShadowPane {
+    -fx-effect: dropshadow(gaussian, #625e54, 16, 0, 6, 6)
+}
+
+.tempDisplayLabel {
+    -fx-text-fill: #424242;
+    -fx-font-family: Sixtyfour;
+    -fx-font-size: 75pt;
+}
+
+.modeDisplayLabel {
+    -fx-text-fill: #424242;
+    -fx-font-family: Sixtyfour;
+    -fx-font-size: 25pt;
+}
+
+.outerBox {
+    -fx-background-color: #ece5d2;
+    -fx-alignment: left;
+    -fx-padding: 50;
+    -fx-effect: innershadow(gaussian, #625e54, 50, 0, 0, 0);
+}
+
+.tempButton {
+    -fx-background-radius: 30;
+    -fx-background-color: #aab0a7;
+    -fx-effect: innershadow(gaussian, #3b3b2c, 16, 0, -4, -4);
+    -fx-border-color: #3b3b2c;
+    -fx-border-width: 1;
+    -fx-border-radius: 30;
+    -fx-border-style: groove;
+}
+
+.tempControlBox {
+    -fx-spacing: 40;
+    -fx-padding: 25;
+    -fx-alignment: center;
+}
+
+.powerButton {
+    -fx-background-radius: 30;
+    -fx-background-color: #aab0a7;
+    -fx-effect: innershadow(gaussian, #3b3b2c, 16, 0, -4, -4);
+    -fx-border-color: #3b3b2c;
+    -fx-border-width: 1;
+    -fx-border-radius: 30;
+    -fx-border-style: groove;
+}
+
+.modeButton {
+    -fx-background-radius: 30;
+    -fx-background-color: #aab0a7;
+    -fx-effect: innershadow(gaussian, #3b3b2c, 16, 0, -4, -4);
+    -fx-border-color: #3b3b2c;
+    -fx-border-width: 1;
+    -fx-border-radius: 30;
+    -fx-border-style: groove;
+}
+
+.modeControlBox{
+    -fx-spacing: 40;
+    -fx-padding: 25;
+    -fx-alignment: center;
+}
