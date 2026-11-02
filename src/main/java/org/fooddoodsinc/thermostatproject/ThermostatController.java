@@ -74,14 +74,14 @@ public class ThermostatController {
 
     @FXML
     protected void onTempUpButtonClick() {
-        if(powerOn) {
+        if(powerOn && targetTemp < 99) {
             targetTempDisplay.setText(String.valueOf(++targetTemp));
         }
     }
 
     @FXML
     protected void onTempDownButtonClick() {
-        if(powerOn) {
+        if(powerOn && targetTemp > 45) {
             targetTempDisplay.setText(String.valueOf(--targetTemp));
         }
     }
