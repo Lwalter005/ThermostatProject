@@ -1,5 +1,7 @@
 package org.fooddoodsinc.thermostatproject;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -22,6 +24,7 @@ public class ThermostatController {
     protected Integer targetTemp = 75;
     private SystemMode systemMode = SystemMode.COOL;
     private FanMode fanMode = FanMode.AUTO;
+    private CounterTask counterTask;
 
     private enum SystemMode {
         COOL,
@@ -76,6 +79,7 @@ public class ThermostatController {
     protected void onTempUpButtonClick() {
         if(powerOn && targetTemp < 99) {
             targetTempDisplay.setText(String.valueOf(++targetTemp));
+            invokeCounterTask();
         }
     }
 
@@ -83,7 +87,26 @@ public class ThermostatController {
     protected void onTempDownButtonClick() {
         if(powerOn && targetTemp > 45) {
             targetTempDisplay.setText(String.valueOf(--targetTemp));
+            invokeCounterTask();
         }
+    }
+
+    private void invokeCounterTask() {
+        if (counterTask != null && counterTask.isRunning()) {
+            counterTask.cancel();
+        }
+
+        counterTask = new CounterTask(targetTemp, currentTemp);
+        counterTask.valueProperty().addListener(new ChangeListener<Integer>() {
+            @Override
+            public void changed(ObservableValue<? extends Integer> observableValue, Integer integer, Integer newValue) {
+                currentTempDisplay.setText(String.valueOf(newValue));
+            }
+        });
+
+        Thread thread = new Thread(counterTask);
+        thread.setDaemon(true);
+        thread.start();
     }
 
     @FXML
